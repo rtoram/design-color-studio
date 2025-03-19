@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignColor Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>DesignColor Studio</h1>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle"> Claro/Escuro
+        </label>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <input type="file" id="imageUpload" accept="image/*">
+            <div class="tool">
+                <button id="pickerBtn" class="icon-btn">Conta-Gotas</button>
+                <div id="colorPreview" class="color-box"></div>
+                <input type="color" id="colorPicker" title="Escolha uma nova cor">
+                <input type="text" id="colorInput" placeholder="HEX (ex: #FF0000)">
+                <button id="applyColorBtn" disabled>Aplicar Cor</button>
+                <button id="paletteBtn">Gerar Paleta</button>
+                <div id="paletteContainer"></div>
+                <label>Tolerância: <input type="range" id="toleranceSlider" min="0" max="50" value="0"></label>
+            </div>
+        </aside>
+        <section class="canvas-container">
+            <div class="canvas-tools">
+                <button id="zoomIn">+</button>
+                <button id="zoomOut">-</button>
+                <button id="gridToggle">Grade</button>
+            </div>
+            <canvas id="imageCanvas"></canvas>
+        </section>
+    </main>
+    <footer>
+        <button id="downloadBtn" disabled>Download</button>
+        <button id="resetBtn" disabled>Restaurar</button>
+        <button id="deleteBtn" disabled>Deletar</button>
+        <button id="undoBtn" disabled>Desfazer</button>
+        <button id="redoBtn" disabled>Refazer</button>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/color-thief@2.3.2/dist/color-thief.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
